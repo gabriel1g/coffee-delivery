@@ -25,11 +25,13 @@
       "@assets/*": ["assets/*"],
       "@components/*": ["components/*"],
       "@contexts/*": ["contexts/*"],
+      "@data/*": ["data/*"],
       "@dtos/*": ["dtos/*"],
       "@layouts/*": ["layouts/*"],
       "@pages/*": ["pages/*"],
       "@routes/*": ["routes/*"],
-      "@styles/*": ["styles/*"]
+      "@styles/*": ["styles/*"],
+      "@utils/*": ["utils/*"]
     }
   },
   "include": ["src"],

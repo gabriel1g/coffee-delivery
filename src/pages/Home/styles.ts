@@ -57,4 +57,20 @@ export const HomeContainer = styled.div`
       }
     }
   }
+
+  .content {
+    margin-top: 2rem;
+
+    h2 {
+      color: ${({ theme }) => theme['base-subtitle']};
+      font-size: 2rem;
+    }
+
+    .products {
+      margin-top: 3.5rem;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 2.5rem;
+    }
+  }
 `;

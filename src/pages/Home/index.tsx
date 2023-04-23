@@ -1,4 +1,6 @@
 import CoffeeBanner from '@assets/coffee-banner.svg';
+import { CoffeeCard } from '@components/CoffeeCard';
+import { products } from '@data/products';
 import { Coffee, Package, ShoppingCart, Timer } from '@phosphor-icons/react';
 
 import { HomeContainer } from './styles';
@@ -40,6 +42,14 @@ export function Home() {
         </div>
         <div>
           <img src={CoffeeBanner} />
+        </div>
+      </div>
+      <div className="content">
+        <h2>Nossos cafés</h2>
+        <div className="products">
+          {products.map((product) => {
+            return <CoffeeCard key={product.id} coffee={product}></CoffeeCard>;
+          })}
         </div>
       </div>
     </HomeContainer>
