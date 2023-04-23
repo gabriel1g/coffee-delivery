@@ -1,3 +1,4 @@
+import { ProductsNumber } from '@components/ProductsNumber';
 import { ProductDTO } from '@dtos/ProductDTO';
 import { ShoppingCart } from '@phosphor-icons/react';
 import { formatMoney } from '@utils/formatMoney';
@@ -31,9 +32,7 @@ export function CoffeeCard({ coffee }: CoffeeCardProps) {
               <span>{formattedPrice}</span>
             </div>
             <div className="shopping_cart">
-              <div className="items_number">
-                <input type="number" />
-              </div>
+              <ProductsNumber />
               <div className="shopping_cart_bottom">
                 <ShoppingCart size={22} weight="fill" />
               </div>

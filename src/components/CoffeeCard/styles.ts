@@ -76,23 +76,6 @@ export const CoffeeCardContainer = styled.div`
         display: flex;
         gap: 0.5rem;
 
-        .items_number {
-          width: 72px;
-
-          input {
-            width: 100%;
-            padding: 0.5rem;
-            border: none;
-            border-radius: 6px;
-            background-color: ${({ theme }) => theme['base-button']};
-            color: ${({ theme }) => theme['base-title']};
-
-            &::-webkit-inner-spin-button {
-              all: unset;
-            }
-          }
-        }
-
         .shopping_cart_bottom {
           padding: 0.5rem;
           border-radius: 6px;
