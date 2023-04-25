@@ -29,6 +29,7 @@
       "@dtos/*": ["dtos/*"],
       "@layouts/*": ["layouts/*"],
       "@pages/*": ["pages/*"],
+      "@reducers/*": ["reducers/*"],
       "@routes/*": ["routes/*"],
       "@styles/*": ["styles/*"],
       "@utils/*": ["utils/*"]

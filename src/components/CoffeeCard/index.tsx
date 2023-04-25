@@ -1,4 +1,7 @@
+import { useContext } from 'react';
+
 import { ProductsNumber } from '@components/ProductsNumber';
+import { CartContext } from '@contexts/CartContext';
 import { ProductDTO } from '@dtos/ProductDTO';
 import { ShoppingCart } from '@phosphor-icons/react';
 import { formatMoney } from '@utils/formatMoney';
@@ -10,7 +13,24 @@ interface CoffeeCardProps {
 }
 
 export function CoffeeCard({ coffee }: CoffeeCardProps) {
+  const { cartProducts, cartIncrease, cartDecrease, removeProductFromCart } = useContext(CartContext);
+
+  const currentProduct = cartProducts.find((product) => product.id === coffee.id);
+  const currentQuantity = currentProduct ? currentProduct.quantity : 0;
+
   const formattedPrice = formatMoney(coffee.price);
+
+  function handleIncrease() {
+    cartIncrease(coffee);
+  }
+
+  function handleDecrease() {
+    if (currentQuantity > 1) {
+      cartDecrease(coffee.id);
+    } else {
+      removeProductFromCart(coffee.id);
+    }
+  }
 
   return (
     <CoffeeCardContainer>
@@ -32,7 +52,7 @@ export function CoffeeCard({ coffee }: CoffeeCardProps) {
               <span>{formattedPrice}</span>
             </div>
             <div className="shopping_cart">
-              <ProductsNumber />
+              <ProductsNumber quantity={currentQuantity} onIncrease={handleIncrease} onDecrease={handleDecrease} />
               <div className="shopping_cart_bottom">
                 <ShoppingCart size={22} weight="fill" />
               </div>

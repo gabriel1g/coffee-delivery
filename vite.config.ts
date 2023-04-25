@@ -14,6 +14,7 @@ export default defineConfig({
       '@dtos': path.resolve(__dirname, './src/dtos'),
       '@layouts': path.resolve(__dirname, './src/layouts'),
       '@pages': path.resolve(__dirname, './src/pages'),
+      '@reducers': path.resolve(__dirname, './src/reducers'),
       '@routes': path.resolve(__dirname, './src/routes'),
       '@styles': path.resolve(__dirname, './src/styles'),
       '@utils': path.resolve(__dirname, './src/utils'),

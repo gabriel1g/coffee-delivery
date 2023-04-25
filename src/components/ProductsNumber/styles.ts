@@ -8,16 +8,12 @@ export const ProductsNumberContainer = styled.div`
   display: flex;
   gap: 0.25rem;
 
-  input {
+  span {
     width: 100%;
-    border: none;
-    background-color: transparent;
     color: ${({ theme }) => theme['base-title']};
-    text-align: center;
-
-    &::-webkit-inner-spin-button {
-      all: unset;
-    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   button {
