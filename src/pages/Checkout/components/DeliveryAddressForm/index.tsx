@@ -5,10 +5,10 @@ import { DeliveryAddressFormContainer } from './styles';
 export function DeliveryAddressForm() {
   return (
     <DeliveryAddressFormContainer>
-      <div>
-        <MapPinLine />
+      <div className="top">
+        <MapPinLine size={22} />
         <div>
-          <h4>Endereço de Entrega</h4>
+          <h3>Endereço de Entrega</h3>
           <p>Informe o endereço onde deseja receber seu pedido</p>
         </div>
       </div>
