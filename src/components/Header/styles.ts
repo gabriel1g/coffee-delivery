@@ -30,6 +30,18 @@ export const HeaderContainer = styled.header`
       color: ${({ theme }) => theme['yellow-dark']};
       display: flex;
       align-items: center;
+      position: relative;
+
+      span {
+        padding: 0.2rem 0.4rem;
+        border-radius: 50%;
+        background-color: ${({ theme }) => theme['yellow-dark']};
+        color: ${({ theme }) => theme['white']};
+        font-size: 0.75rem;
+        position: absolute;
+        top: -0.5rem;
+        right: -0.5rem;
+      }
     }
   }
 `;
