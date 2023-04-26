@@ -24,13 +24,16 @@ export const HeaderContainer = styled.header`
     }
 
     .shopping_cart {
-      padding: 0.5rem;
       border-radius: 6px;
       background-color: ${({ theme }) => theme['yellow-light']};
-      color: ${({ theme }) => theme['yellow-dark']};
       display: flex;
       align-items: center;
       position: relative;
+
+      a {
+        padding: 0.5rem;
+        color: ${({ theme }) => theme['yellow-dark']};
+      }
 
       span {
         padding: 0.2rem 0.4rem;

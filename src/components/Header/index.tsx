@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import { NavLink } from 'react-router-dom';
 
 import Logo from '@assets/logo.png';
 import { CartContext } from '@contexts/CartContext';
@@ -19,7 +20,9 @@ export function Header() {
         </div>
         <div className="shopping_cart">
           <span>{cartProducts.length}</span>
-          <ShoppingCart size={22} weight="fill" />
+          <NavLink to="/checkout">
+            <ShoppingCart size={22} weight="fill" />
+          </NavLink>
         </div>
       </nav>
     </HeaderContainer>
