@@ -1,45 +1,62 @@
 import { useContext } from 'react';
 
 import { ProductsNumber } from '@components/ProductsNumber';
+import { RemoveProductButton } from '@components/RemoveProductButton';
 import { CartContext } from '@contexts/CartContext';
+import { formatMoney } from '@utils/formatMoney';
 
 import { SelectedCoffeesContainer } from './styles';
 
 export function SelectedCoffees() {
   const { cartProducts } = useContext(CartContext);
 
+  const itemsTotalPrice = cartProducts.reduce((prev, curr) => {
+    return prev + curr.price * curr.quantity;
+  }, 0);
+  const deliveryTotalPrice = 3.5;
+  const cartTotalPrice = itemsTotalPrice + deliveryTotalPrice;
+
   return (
     <SelectedCoffeesContainer>
-      <div>
+      <div className="cart_products">
         <ul>
-          {cartProducts.map((product) => (
-            <li key={product.id}>
-              <img src={`src/assets/products/${product.thumb}`} />
-              <div>
-                <h4>{product.name}</h4>
-                <div>
-                  <button>{product.quantity}</button>
-                  <button>Remover</button>
+          {cartProducts.map((product) => {
+            const formattedPrice = formatMoney(product.price * product.quantity);
+
+            return (
+              <li key={product.id}>
+                <div className="item_box">
+                  <img src={`src/assets/products/${product.thumb}`} />
+                  <div className="box">
+                    <h4>{product.name}</h4>
+                    <div className="buttons">
+                      <ProductsNumber product={product} />
+                      <RemoveProductButton productId={product.id} />
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <span>R$ {product.price}</span>
-            </li>
-          ))}
+                <span className="price">R$ {formattedPrice}</span>
+              </li>
+            );
+          })}
         </ul>
       </div>
-      <div>
-        <div>
-          <span>Total de itens</span>
-          <span>R$ 29,70</span>
+      <div className="total">
+        <div className="values">
+          <div className="expenseTotal">
+            <span>Total de itens</span>
+            <span className="price">R$ {formatMoney(itemsTotalPrice)}</span>
+          </div>
+          <div className="expenseTotal">
+            <span>Entrega</span>
+            <span className="price">R$ {formatMoney(deliveryTotalPrice)}</span>
+          </div>
+          <div className="cartTotal">
+            <span>Total</span>
+            <span className="price">R$ {formatMoney(cartTotalPrice)}</span>
+          </div>
         </div>
-        <div>
-          <span>Entrega</span>
-          <span>R$ 3,50</span>
-        </div>
-        <div>
-          <span>Total</span>
-          <span>R$ 33,20</span>
-        </div>
+        <button className="confirm_order">Confirmar Pedido</button>
       </div>
     </SelectedCoffeesContainer>
   );
