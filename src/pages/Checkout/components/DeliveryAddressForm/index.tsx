@@ -12,23 +12,23 @@ export function DeliveryAddressForm() {
           <p>Informe o endereço onde deseja receber seu pedido</p>
         </div>
       </div>
-      <div>
-        <div>
-          <input type="text" />
+      <form>
+        <div className="row-1">
+          <input placeholder="CEP" type="text" />
         </div>
-        <div>
-          <input type="text" />
+        <div className="row-2">
+          <input placeholder="Rua" type="text" />
         </div>
-        <div>
-          <input type="number" />
-          <input type="text" />
+        <div className="row-3">
+          <input placeholder="Número" type="number" />
+          <input placeholder="Complemento" type="text" />
         </div>
-        <div>
-          <input type="text" />
-          <input type="text" />
-          <input type="text" />
+        <div className="row-4">
+          <input placeholder="Bairro" type="text" />
+          <input placeholder="Cidade" type="text" />
+          <input placeholder="UF" type="text" />
         </div>
-      </div>
+      </form>
     </DeliveryAddressFormContainer>
   );
 }

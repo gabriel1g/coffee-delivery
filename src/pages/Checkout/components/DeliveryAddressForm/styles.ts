@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const DeliveryAddressFormContainer = styled.form`
+export const DeliveryAddressFormContainer = styled.div`
   padding: 2.5rem;
   border-radius: 6px;
   background-color: ${({ theme }) => theme['base-card']};
@@ -29,6 +29,39 @@ export const DeliveryAddressFormContainer = styled.form`
         font-size: 0.875rem;
         line-height: 1.5rem;
       }
+    }
+  }
+
+  form {
+    display: grid;
+    gap: 1rem;
+
+    [class^='row'] {
+      display: grid;
+      gap: 0.75rem;
+
+      input {
+        padding: 0.75rem;
+        border: 1px solid ${({ theme }) => theme['base-button']};
+        border-radius: 4px;
+        background-color: ${({ theme }) => theme['base-input']};
+      }
+    }
+
+    .row-1 {
+      grid-template-columns: 0fr;
+    }
+
+    .row-2 {
+      grid-template-columns: 1fr;
+    }
+
+    .row-3 {
+      grid-template-columns: 0fr 1fr;
+    }
+
+    .row-4 {
+      grid-template-columns: 0fr 1fr 3.75rem;
     }
   }
 `;
